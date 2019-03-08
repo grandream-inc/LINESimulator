@@ -6,5 +6,5 @@ RUN apt-get update \
     links \
   && rm --recursive --force /var/lib/apt/lists/*
 
-RUN npm install -g nori3tsu/LINESimulator#master
+RUN npm install -g grandream-inc/LINESimulator#2.0.1.1
 
