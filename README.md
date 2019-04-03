@@ -9,28 +9,27 @@ The difference are:
 
 ## Usage
 
-1. Download `Dockerfile`.
+### Docker
 
 ```
-$ cd your-project-root
-$ curl -O https://raw.githubusercontent.com/grandream-inc/LINESimulator/master/Dockerfile
+$ docker run --rm -p 8080:8080 -it grandream/line-simulator:2.0.1.1 line-simulator
 ```
 
-2. Create `docker-compose.yml`.
+### Docker Compose
+
+1. Create `docker-compose.yml`.
 
 ```
 version: '2'
 services:
   line-simulator:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: grandream/line-simulator:2.0.1.1
     ports:
       - "8080:8080"
     command: "line-simulator"
 ```
 
-3. Startup docker-compose and open Chrome and connect to http://localhost:8080.
+2. Startup docker-compose and open Chrome and connect to http://localhost:8080.
 
 ```
 $ docker-compose up
